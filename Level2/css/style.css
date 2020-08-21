@@ -30,9 +30,6 @@ body {
 }
 
 .main {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(50%, rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.8)));
@@ -356,6 +353,16 @@ section:nth-child(2) {
 
   .cats_food {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  section:nth-child(2) {
+    margin: 0;
+  }
+
+  section {
+    width: 100%;
   }
 }
 
