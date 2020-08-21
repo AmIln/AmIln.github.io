@@ -17,7 +17,7 @@
 body {
   color: white;
   font-family: Exo-Thin;
-  background-image: url(/img/Pattern.png);
+  background-image: url(../img/Pattern.png);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,7 +96,7 @@ section:nth-child(2) {
   -webkit-clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%, 0 45px);
           clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%, 0 45px);
   background-color: white;
-  background-image: url(/img/cat.png);
+  background-image: url(../img/cat.png);
   background-position: -50px 230px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -359,6 +359,6 @@ section:nth-child(2) {
   }
 }
 
-.webp body { background-image: url(/img/Pattern.webp); }
+.webp body { background-image: url(../img/Pattern.webp); }
 
-.webp .cats_food { background-image: url(/img/cat.webp); }
+.webp .cats_food { background-image: url(../img/cat.webp); }
