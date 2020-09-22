@@ -1,0 +1,489 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+@import "fonts";
+
+html, body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Montserrat-Regular;
+}
+a {
+	text-decoration: none;
+}
+
+// HEADER
+////////////////////////////////////////////////////////////////////////
+header {
+	height: 100px;
+	display: flex;
+	//margin: 0 100px 0 100px;
+
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 1px 10px 20px rgba(240, 240, 240, 0.5);
+}
+
+.logo {
+	margin-left: 100px;
+	position: relative;
+	text-decoration: none;
+	&__img {
+		background-image: url(../img/logo-img.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 179px;
+		height: 95px;
+	}
+	&__text {
+		position: absolute;
+		top: 0;
+		right: -90px;
+		width: 141px;
+		height: 32px;
+
+		font-size: 15px;
+		line-height: 18px;
+		color: #876041;
+	}
+}
+
+nav.menu  { 
+	> ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	> li {
+		position: relative;
+		&:not(:last-child) {
+			margin-right: 100px;
+		}
+		> a {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 22px;
+			color: #202020;
+		}
+		> a.active {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 22px;
+		}
+		> a.active::before {
+			content: "";
+			display: inline-block;
+			width: 13px;
+			height: 13px;
+			background-color: #FF3333;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+	}
+	
+	}
+}
+
+.contact-form {
+	display: flex;
+	margin-right: 100px;
+	&__button {
+		width: 250px;
+		height: 60px;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 20px;	
+		margin-right: 30px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+		color: #000000;
+	}
+	&__whatsapp {
+		display: flex;
+		align-items: center;
+	}
+	&__whatsapp_icon {
+		width: 40px;
+		height: 40px;
+		background-image: url(../img/whatsapp-icon.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		margin-right: 3px;
+		
+	}
+	&__tel {
+		font-size: 18px;
+		line-height: 22px;
+		color: #000000;
+	}
+}
+
+
+// MAIN
+////////////////////////////////////////////////////////////////////////
+
+.banner {
+	position: relative;
+	height: 924px;
+	margin-bottom: 100px;
+	display: flex;
+	/*
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 100px;*/
+	&__record {
+		display: flex;
+		flex-direction: column;
+		width: 676px;
+		height: 385px;	
+		justify-content: space-between;
+		align-items: center;
+
+		position: absolute;
+		top: 229px;
+		left: 166px;
+		z-index: 999;
+	}
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 265px;
+		background: rgba(255, 255, 255, 0.5);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-sizing: border-box;
+		text-align: center;
+		padding: 68px 37px;
+		// текст
+		font-weight: 600;
+		font-size: 38px;
+		line-height: 46px;
+		// тень
+		box-shadow: inset 0px 1px 10px rgba(219, 213, 213, 0.3);
+		border-radius: 20px;
+	}
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 300px;
+		height: 60px;
+		background: #FF3333;
+		border-radius: 20px;
+		// текст
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+		color: #ffffff;
+	}
+	&__background {
+		position: absolute;
+		right: 100px;
+		width: 1251px;
+		height: 924px;
+		background-image: url(../img/banner-img.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		border-radius: 20px 20px 0px 0px;
+	}
+	&__icons {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		left: 100px;
+	}
+	&__icon {
+		width: 50px;
+		height: 50px;
+		
+		&_inst {
+			background-image: url(../img/instagram-icon.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		&_whatsapp {
+			background-image: url(../img/whatsapp-icon.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin: 0 20px;
+		}
+		&_tel {
+			background-image: url(../img/tel-icon.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+
+// Services
+////////////////////////////////////////////////////////////////////////
+
+.services {
+	text-align: center;
+	&__list {
+		display: flex;
+		margin: 0 100px;
+		justify-content: space-between;
+	}
+	&__wrapper {
+		width: 530px;
+		height: 640px;
+
+		// текст
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
+
+		&_active {
+			background-image: url(../img/gradient.png);
+			background-size: cover;
+			> h3 {
+				margin-bottom: 120px;
+			}
+			> picture {
+				display: none;
+			}
+			> .services__hidden-text {
+				display: flex;
+				
+			}
+			> .services__footering {
+				flex-direction: column;
+				> button {
+					width: 250px;
+					height: 60px;
+					background: #FF3333;
+					border: none;
+					order: -1;
+					//margin-top: 40px;
+					margin-bottom: 65px;
+
+					//текст
+					font-weight: 600;
+					font-size: 22px;
+					line-height: 27px;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+	&__heading-sm {
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 30px;
+	}
+	&__img {
+		width: 438px;
+		height: 388px;
+		border-radius: 20px;
+	}
+	&__hidden-text {
+		display: none;
+		width: 438px;
+		height: 185px;
+		background: rgba(255, 255, 255, 0.5);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-sizing: border-box;
+		margin: 0 46px;
+		padding: 32px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		//текст 
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+		// тень
+		box-shadow: inset 0px 1px 10px rgba(219, 213, 213, 0.3);
+		border-radius: 20px;
+	}
+	&__footering {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 40px 46px;
+	}
+	&__price {
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 30px;
+	}
+	&__button-record {
+		width: 200px;
+		height: 60px;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		border-radius: 20px;
+
+		// текст
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 27px;
+	}
+	&__all {
+		margin-top: 60px;
+		margin-bottom: 90px;
+		width: 300px;
+		height: 70px;
+		background: #FFFFFF;
+		border: 2px solid #FF3333;
+		box-sizing: border-box;
+		border-radius: 20px;
+		//текст
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+		color: #FF3333;
+	}
+}
+
+
+// Stock / Carousel 
+////////////////////////////////////////////////////////////////////////
+
+.stock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	&__heading {
+		margin-bottom: 61px;
+	}
+	&__carousel {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__slide {
+		width: 604px;
+		height: 315px;
+		position: relative;
+		background: #FFFFFF;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
+	}
+	&__percent {
+		
+		display: flex;
+		align-items: center;
+		margin-top: 19px;
+		margin-left: 31px;
+		> picture {
+			width: 56px;
+			height: 56px;
+		}
+	}
+	&__percent-icon {
+		width: 56px;
+		height: 56px;
+	}
+	&__number {
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 37px;
+		color: #FF3333;
+	}
+	&__text {
+		position: relative;
+		z-index: 999;
+		margin: 0 82px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 440px;
+		height: 150px;
+		background: rgba(255, 255, 255, 0.5);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-sizing: border-box;
+		box-shadow: inset 0px 1px 10px rgba(219, 213, 213, 0.3);
+		border-radius: 20px;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 30px;
+		text-align: center;
+		
+	}
+	&__button-get {
+		width: 176px;
+		height: 42px;
+		background: #FFFFFF;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		border-radius: 15px;
+		font-weight: 600;
+		font-size: 13px;
+		line-height: 16px;
+		margin-top: 30px;
+		margin-left: 82px;
+	}
+	&__img {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 317px;
+		height: 315px;
+		border-radius: 20px;
+	}
+	&__button-all {
+		width: 300px;
+		height: 70px;
+		background: #FF3333;
+		border-radius: 20px;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+		color: #FFFFFF;
+		border: none;
+	}
+	&__slide-active {
+		width: 848px;
+		height: 442px;
+		margin: 0 42px;
+		> .stock__number {
+			font-size: 35px;
+			line-height: 43px;
+		}
+		> .stock__text {
+			width: 620px;
+			height: 210px;
+			font-size: 35px;
+			line-height: 43px;
+		}
+		> .stock__button-get {
+			width: 250px;
+			height: 60px;
+			font-size: 18px;
+			line-height: 22px;
+		}
+		> picture > .stock__img {
+			width: 445px;
+			height: 442px;
+		}
+	}
+}
+.stock__carousel_dotted {
+	margin-top: 44px;
+	margin-bottom: 60px;
+}
+.dot {
+	
+	cursor: pointer;
+	width: 17px;
+	height: 17px;
+	margin: 0 2px;
+	background-color: #ECECEC;
+	border-radius: 50%;
+	display: inline-block;
+	&_active {
+		background-color: #FF3333;
+	}
+}

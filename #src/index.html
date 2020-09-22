@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.min.css">
+		<title>Nogotochki</title>
+	</head>
+	<body>
+		@@include('_header.html')
+		<main class="main">
+			<div class="banner">
+				<div class="banner__record">
+					<div class="banner__text">Запишись на маникюр online и получи дизайн в подарок</div>
+					<div class="banner__button">Записаться online</div>
+				</div>
+				<div class="banner__background"></div>
+				<div class="banner__icons">
+					<div class="banner__icon banner__icon_inst"></div>
+					<div class="banner__icon banner__icon_whatsapp"></div>
+					<div class="banner__icon banner__icon_tel"></div>
+				</div>
+			</div>
+			<div class="services">
+				<h2 class="services__heading">Наши услуги</h2>
+				<div class="services__list">
+					<div class="services__wrapper">
+						<h3 class="services__heading-sm">Педикюр</h3>
+						<img src="img/foot1.png" alt="Foot" class="services__img">
+						<div class="services__hidden-text">Наши мастера сделают качественный и красивый педикюр. Запишитесь на удобное для Вас время!</div>
+						<div class="services__footering">
+							<div class="services__price">от 300 &#8381;</div>
+							<button class="services__button-record">Записаться</button>
+						</div>
+					</div>
+					<div class="services__wrapper services__wrapper_active">
+						<h3 class="services__heading-sm">Маникюр</h3>
+						<img src="img/foot1.png" alt="Hand" class="services__img">
+						<div class="services__hidden-text">Наши мастера сделают качественный и красивый маникюр. Запишитесь на удобное для Вас время!</div>
+						<div class="services__footering">
+							<div class="services__price">от 300 &#8381;</div>
+							<button class="services__button-record">Записаться</button>
+						</div>
+					</div>
+					<div class="services__wrapper">
+						<h3 class="services__heading-sm">Наращивание</h3>
+						<img src="img/hand1.png" alt="Hand+">
+						<div class="services__hidden-text">Наши мастера сделают качественное и красивое наращивание. Запишитесь на удобное для Вас время!</div>
+						<div class="services__footering">
+							<div class="services__price">от 300 &#8381;</div>
+							<button class="services__button-record">Записаться</button>
+						</div>
+					</div>
+				</div>
+				<div class="services__button"><button class="services__all">Все услуги</button></div>
+			</div>
+			<div class="stock">
+				<h2 class="stock__heading">Наши акции</h2>
+				<div class="stock__carousel">
+
+					<div class="stock__slide">
+						<div class="stock__percent">
+							<img src="img/percent-icon.png" alt="percent" class="stock__percent-icon">
+							<div class="stock__number">- 20</div>
+						</div>
+						<div class="stock__text">Маникюр+педикюр = 20% скидка</div>
+						<img src="img/ice-cream.png" alt="Icecream" class="stock__img">
+						<button class="stock__button-get">Получить скидку</button>
+					</div>
+
+					<div class="stock__slide stock__slide-active">
+					  <div class="stock__percent">
+						<img src="img/percent-icon.png" alt="percent" class="stock__percent-icon">
+						  <div class="stock__number">- 30</div>
+					  </div>
+					  <div class="stock__text">Скидка 30% на каждый восьмой маникюр</div>
+					  <img src="img/hand-dog.png" alt="Hand+dog" class="stock__img">
+					  <button class="stock__button-get">Получить скидку</button>
+					</div>
+
+					<div class="stock__slide">
+						<div class="stock__percent">
+							<img src="img/percent-icon.png" alt="percent" class="stock__percent-icon">
+							<div class="stock__number">- 25</div>
+						</div>
+						<div class="stock__text">Приведи подругу и получи скидку</div>
+						<img src="img/face.png" alt="Face" class="stock__img">
+						<button class="stock__button-get">Получить скидку</button>
+					</div>
+					<div class="stock__slide">
+						<div class="stock__percent">
+							<img src="img/percent-icon.png" alt="percent" class="stock__percent-icon">
+							<div class="stock__number">- 25</div>
+						</div>
+						<div class="stock__text">blue blue и blue blue</div>
+						<img src="img/blue.png" alt="blue" class="stock__img">
+						<button class="stock__button-get">blue blue</button>
+					</div>
+					<div class="stock__slide">
+						<div class="stock__percent">
+							<img src="img/percent-icon.png" alt="percent" class="stock__percent-icon">
+							<div class="stock__number">- 25</div>
+						</div>
+						<div class="stock__text">green green и green green</div>
+						<img src="img/green.png" alt="green" class="stock__img">
+						<button class="stock__button-get">green green</button>
+					</div>
+			
+				</div>
+				<div id="dot_contain" class="stock__carousel_dotted">
+					<span class="dot"></span> 
+					<span class="dot dot_active"></span> 
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+				<button class="stock__button-all">Все акции</button>
+			</div>
+			<div class="online-record">
+				<div class="online-record__column-left">
+					<input type="text" class="online-record__name">
+					<input type="text" class="online-record__tel">
+					<button>Записаться</button>
+					<input type="checkbox" class="online-record__consent" checked='checked'>Я согласен с условиями обработки персональных данных
+				</div>
+				<div class="online-record__column-right">
+					<select name="online-record__services" id="OnlineR1">
+						<option hidden=''>Услуга</option>
+						<option value="Маникюр">Маникюр</option>
+						<option value="Маникюр с покрытием">Маникюр с покрытием</option>
+						<option value="Маникюр + покрытие + дизайн">Маникюр+покрытие+дизайн</option>
+						<option value="Маникюр + наращивание">Маникюр+наращивание</option>
+						<option value="Коррекция нарощенных ногтей">Коррекция нарощенных ногтей</option>
+						<option value="Педикюр">Педикюр</option>
+						<option value="Педикюр с покрытием">Педикюр с покрытием</option>
+						<option value="Педикюр + покрытие + дизайн">Педикюр + покрытие + дизайн</option>
+						<option value="Наращивание ресниц">Наращивание ресниц</option>
+						<option value="Оформление и окраска бровей">Оформление и окраска бровей</option>
+						<option value="Маникюр">Депиляция</option>
+					</select>
+					<input type="date">
+					<select name="online-record__time" id="OnlineR2">
+						<option hidden="">Время</option>
+						<option value="08:00">08:00</option>
+						<option value="08:30">08:30</option>
+						<option value="09:00">09:00</option>
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="13:00">13:00</option>
+						<option value="13:30">13:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>
+						<option value="18:00">18:00</option>
+					</select>
+				</div>
+			</div>
+		</main>
+		@@include('_footer.html')
+		<script src="js/script.min.js"></script>
+	</body>
+</html>
