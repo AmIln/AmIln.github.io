@@ -117,13 +117,18 @@
 				<button class="stock__button-all">Все акции</button>
 			</div>
 			<div class="online-record">
-				<div class="online-record__column-left">
-					<input type="text" class="online-record__name">
-					<input type="text" class="online-record__tel">
-					<button>Записаться</button>
-					<input type="checkbox" class="online-record__consent" checked='checked'>Я согласен с условиями обработки персональных данных
+				<div class="online-record__column online-record__column-left">
+					<input type="text" class="online-record__input" placeholder="Как вас зовут?">
+					<input type="text" class="online-record__input" placeholder="Номер телефона">
+					<button class="online-record__button">Записаться</button>
+					<div class="online-record__checkbox-wrapper">
+						<input type="checkbox" class="online-record__checkbox" checked='checked' id="checkbox">
+						<label for="checkbox">Я согласен с условиями обработки персональных данных</label>
+					</div>
+					
 				</div>
-				<div class="online-record__column-right">
+				<div class="online-record__column online-record__column-right">
+					<h2>Online запись</h2>
 					<select name="online-record__services" id="OnlineR1">
 						<option hidden=''>Услуга</option>
 						<option value="Маникюр">Маникюр</option>

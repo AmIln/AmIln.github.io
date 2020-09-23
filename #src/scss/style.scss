@@ -487,3 +487,97 @@ nav.menu  {
 		background-color: #FF3333;
 	}
 }
+
+.online-record {
+	height: 594px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/gradient-big.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__column {
+		width: 845px;
+		height: 532px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&-left {
+			background-color: #ffffff;
+			border-radius: 20px 0 0 20px;
+			> .online-record__input {
+				width: 300px;
+				height: 60px;
+				border: 1px solid #5c5c5c;
+				box-sizing: border-box;
+				border-radius: 20px;
+				margin-bottom: 40px;
+				text-align: center;
+				font-family: Montserrat-Regular;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 20px;
+				text-align: center;
+				color: #000000;
+				opacity: 0.5;
+			}
+			> button {
+				width: 300px;
+				height: 70px;
+				background: #FF3333;
+				border-radius: 20px;
+				margin-bottom: 50px;
+				text-align: center;
+				font-family: Montserrat-Regular;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 25px;
+				line-height: 30px;
+				color: #ffffff;
+				border: none;
+
+			}
+			> .online-record__checkbox-wrapper {
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				> #checkbox {
+					width: 30px;
+					height: 30px;
+					background: #FFFFFF;
+					border: 1px solid #5C5C5C;
+					box-sizing: border-box;
+					border-radius: 5px;
+				}
+				> label {
+					max-width: 344px;
+					margin-left: 37px;
+					font-family: Montserrat-Regular;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 22px;
+					color: #000000;
+				}
+			}
+		}
+		&-right {
+			background-image: url(../img/gradient-small.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 0px 20px 20px 0px;
+			> h2 {
+				font-family: Montserrat-Regular;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 30px;
+				line-height: 37px;
+				color: #000000;
+			}
+		}
+	}
+}
