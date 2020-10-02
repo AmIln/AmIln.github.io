@@ -490,6 +490,7 @@ nav.menu  {
 
 .online-record {
 	height: 594px;
+	margin-top: 112px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -570,6 +571,8 @@ nav.menu  {
 			background-repeat: no-repeat;
 			background-size: cover;
 			border-radius: 0px 20px 20px 0px;
+			//text-align-last: center;
+			//text-align: center;
 			> h2 {
 				font-family: Montserrat-Regular;
 				font-style: normal;
@@ -577,6 +580,7 @@ nav.menu  {
 				font-size: 30px;
 				line-height: 37px;
 				color: #000000;
+				margin-bottom: 45px;
 			}
 			> select {
 				width: 350px;
@@ -595,8 +599,13 @@ nav.menu  {
 				line-height: 30px;
 				color: #000000;
 				appearance: none;
-				//background: url('../img/arrow1.png') no-repeat 95% center;
-				padding-left: 130px;
+				outline: none;
+				text-align-last: center;
+				text-align: center;
+				> option {
+					text-align-last: center;
+					text-align: center;	
+				}
 			}
 			> input {
 				width: 350px;
@@ -611,6 +620,31 @@ nav.menu  {
 				font-size: 25px;
 				line-height: 30px;
 				color: #000000;
+				outline: none;
+				text-align: center;
+				text-align-last: center;
+				margin: 56px 0 56px 0;
+			}
+		}
+	}
+}
+.job {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	> h2 {
+		margin-bottom: 80px;
+	}
+	> .job__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 100px 0 100px;
+		>.job__wrapper_mini {
+			margin: 0 120px 0 0;
+			> img {
+				max-width: 494px;
+				max-height: 450px;
+				border-radius: 15px;
 			}
 		}
 	}
