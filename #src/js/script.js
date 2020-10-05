@@ -89,3 +89,24 @@ function hideSlide() {
     }
 }
 hideSlide()
+
+
+///////////////////////////////////////////////////////////////////////
+let allOptionService = document.getElementsByClassName("online-record-option");
+let optionService = Array.from(allOptionService);
+let optionsWrap = document.getElementsByClassName("online-record-options");
+let buttonSrevice = document.getElementById("online-record-service");
+// функция клика по услугам
+
+function clickService() {
+    document.querySelector('#online-record-service').addEventListener('click', function(e){ // Вешаем обработчик клика на online-record-service
+        /*for(i=0;i<allOptionService.length;i++) {
+            allOptionService[i].style.display = 'flex'
+        }*/
+        optionsWrap[0].style.display = 'flex';
+        buttonSrevice.style.borderRadius = '20px 20px 0 0';
+        console.log(buttonSrevice)
+
+    });
+}
+clickService()

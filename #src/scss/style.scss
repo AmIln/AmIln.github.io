@@ -582,7 +582,8 @@ nav.menu  {
 				color: #000000;
 				margin-bottom: 45px;
 			}
-			> select {
+			> .online-record-select {
+				position: relative;
 				width: 350px;
 				height: 70px;
 				background: #FFFFFF;
@@ -600,11 +601,47 @@ nav.menu  {
 				color: #000000;
 				appearance: none;
 				outline: none;
-				text-align-last: center;
-				text-align: center;
-				> option {
-					text-align-last: center;
-					text-align: center;	
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				> .online-record-name {
+					font-family: Montserrat;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 25px;
+					line-height: 30px;
+					text-align: center;
+
+					color: #000000;
+				}
+				> .online-record-options {
+					display: none;
+					position: absolute;
+					top: 68px;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+					> .online-record-option {
+						width: 350px;
+						height: 70px;
+						background: #FFFFFF;
+						border: 1px solid rgba(0, 0, 0, 0.25);
+						box-sizing: border-box;
+						border-radius: 0px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						font-family: Montserrat;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 18px;
+						line-height: 22px;
+						&:last-child {
+							border-radius: 0 0 20px 20px;
+						}
+					}
 				}
 			}
 			> input {
