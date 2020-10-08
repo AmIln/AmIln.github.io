@@ -95,18 +95,57 @@ hideSlide()
 let allOptionService = document.getElementsByClassName("online-record-option");
 let optionService = Array.from(allOptionService);
 let optionsWrap = document.getElementsByClassName("online-record-options");
-let buttonSrevice = document.getElementById("online-record-service");
+let buttonService = document.getElementById("online-record-service");
+
+function idForService() {
+    for (let i=0;i<optionService.length;i++) {
+        optionService[i].id = 'service' + i;
+    }
+}
+idForService()
+
 // функция клика по услугам
-
 function clickService() {
-    document.querySelector('#online-record-service').addEventListener('click', function(e){ // Вешаем обработчик клика на online-record-service
-        /*for(i=0;i<allOptionService.length;i++) {
-            allOptionService[i].style.display = 'flex'
-        }*/
-        optionsWrap[0].style.display = 'flex';
-        buttonSrevice.style.borderRadius = '20px 20px 0 0';
-        console.log(buttonSrevice)
-
+    buttonService.addEventListener('click', function(e){ // Вешаем обработчик клика на online-record-service
+        // добавляем класс active
+        optionsWrap[0].classList.add("online-record-options-active");
+        // убираем border
+        buttonService.style.borderRadius = '20px 20px 0 0';
     });
+
+    window.addEventListener('click', checkClick);
+    // функция скрытия услуг при клике за ее пределами
+    function checkClick(e) {
+        // если клик по данным классам, то ничего не делать
+        if (e.target.matches('.online-record-select, .online-record-option, .online-record-options, .online-record-options-active')) {
+            selectService(e)
+            console.log('Клик по активному');
+
+        } else {
+            // если кликнули не по услугам, то удаляем класс active и возвращаем border
+            optionsWrap[0].classList.remove("online-record-options-active");
+            buttonService.style.borderRadius = '20px';
+            console.log('всё другое');
+        }
+    }
+    
 }
 clickService()
+
+// функция прибавения класса active к услуге
+
+function selectService(e) {
+    if (e.target.matches('.online-record-option')) {
+        console.log('кликнули по услуге')
+        let idActive = e.target.id;
+        for (let i=0;i<optionService;i++) {
+            console.log('удалили классы');
+            optionService[i].classList.remove('online-record-option-active');
+            e.classList.add('online-record-option-active')
+            
+        }
+        console.log(idActive)
+    }
+}
+
+

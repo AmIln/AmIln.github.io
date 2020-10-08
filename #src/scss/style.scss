@@ -604,6 +604,9 @@ nav.menu  {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				&:hover {
+					cursor: pointer;
+				}
 				> .online-record-name {
 					font-family: Montserrat;
 					font-style: normal;
@@ -611,7 +614,6 @@ nav.menu  {
 					font-size: 25px;
 					line-height: 30px;
 					text-align: center;
-
 					color: #000000;
 				}
 				> .online-record-options {
@@ -622,6 +624,9 @@ nav.menu  {
 					justify-content: center;
 					align-items: center;
 					text-align: center;
+					&-active {
+						display: flex;
+					}
 					> .online-record-option {
 						width: 350px;
 						height: 70px;
@@ -640,6 +645,11 @@ nav.menu  {
 						line-height: 22px;
 						&:last-child {
 							border-radius: 0 0 20px 20px;
+						}
+						&:hover {
+							font-weight: 600;
+							color: #000000;
+							cursor: pointer;
 						}
 					}
 				}
