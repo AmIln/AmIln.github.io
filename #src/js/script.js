@@ -79,7 +79,7 @@ console.log(Slides);
 // функция скрытия "лишних" слайдов
 function hideSlide() {
     //перебираем слайды
-    for (i=0;i<Slides.length;i++) {
+    for (let i=0;i<Slides.length;i++) {
         // если значение order больше 3, то скрываем слайд
         if(Slides[i].style.order > 3) {
             Slides[i].style.display = 'none';
@@ -117,9 +117,23 @@ function clickService() {
     // функция скрытия услуг при клике за ее пределами
     function checkClick(e) {
         // если клик по данным классам, то ничего не делать
-        if (e.target.matches('.online-record-select, .online-record-option, .online-record-options, .online-record-options-active')) {
-            selectService(e)
+        if (e.target.matches('.online-record-select, .online-record-name, .online-record-option, .online-record-options, .online-record-options-active')) {
+            //selectService(e)
             console.log('Клик по активному');
+
+            // если клик по конкретной услуге
+            if (e.target.matches('.online-record-option')) {
+                // записывем id услуги
+                let id = e.target.id;
+                // цикл удаляет активные классы
+                for (let i=0;i<optionService.length;i++) {
+                    console.log('удаляю')
+                    optionService[i].classList.remove('online-record-option-active')
+                }
+                // ищем нужную нам услугу по id и добавляем ей active
+                let activeServiceNow = document.querySelector('#' + id);
+                activeServiceNow.classList.add('online-record-option-active');
+            }
 
         } else {
             // если кликнули не по услугам, то удаляем класс active и возвращаем border
@@ -134,18 +148,12 @@ clickService()
 
 // функция прибавения класса active к услуге
 
-function selectService(e) {
-    if (e.target.matches('.online-record-option')) {
-        console.log('кликнули по услуге')
-        let idActive = e.target.id;
-        for (let i=0;i<optionService;i++) {
-            console.log('удалили классы');
-            optionService[i].classList.remove('online-record-option-active');
-            e.classList.add('online-record-option-active')
-            
-        }
-        console.log(idActive)
+/*function selectService() {
+    let activeServiceNow = e.id;
+    console.log(activeServiceNow)
+    for (let i=0;i<optionService;i++) {
+        optionService[i].classList.remove('online-record-option-active')
     }
-}
+}*/
 
 
