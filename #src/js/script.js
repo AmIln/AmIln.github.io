@@ -92,6 +92,8 @@ hideSlide()
 
 
 ///////////////////////////////////////////////////////////////////////
+// Услуги
+
 let allOptionService = document.getElementsByClassName("online-record-option");
 let optionService = Array.from(allOptionService);
 let optionsWrap = document.getElementsByClassName("online-record-options");
@@ -146,14 +148,60 @@ function clickService() {
 }
 clickService()
 
-// функция прибавения класса active к услуге
 
-/*function selectService() {
-    let activeServiceNow = e.id;
-    console.log(activeServiceNow)
-    for (let i=0;i<optionService;i++) {
-        optionService[i].classList.remove('online-record-option-active')
+///////////////////////////////////////////////////////////////////////
+// Время
+
+let allOptionTime = document.getElementsByClassName("online-record-time");
+let optionTime = Array.from(allOptionTime);
+let TimesWrap = document.getElementsByClassName("online-record-times");
+let buttonTime = document.getElementById("online-record-time");
+
+function idForTime() {
+    for (let i=0;i<optionTime.length;i++) {
+        optionTime[i].id = 'time' + i;
     }
-}*/
+}
+idForTime()
 
+// функция клика по услугам
+function clickTime() {
+    buttonTime.addEventListener('click', function(e){ // Вешаем обработчик клика на online-record-time
+        // добавляем класс active
+        TimesWrap[0].classList.add("online-record-times-active");
+        // убираем border
+        buttonTime.style.borderRadius = '20px 20px 0 0';
+    });
 
+    window.addEventListener('click', checkClick);
+    // функция скрытия услуг при клике за ее пределами
+    function checkClick(e) {
+        // если клик по данным классам, то ничего не делать
+        if (e.target.matches('.online-record-select, .online-record-name, .online-record-time, .online-record-times, .online-record-times-active')) {
+            //selectService(e)
+            console.log('Клик по активному времени');
+
+            // если клик по конкретному времени
+            if (e.target.matches('.online-record-time')) {
+                // записывем id времени
+                let id = e.target.id;
+                // цикл удаляет активные классы
+                for (let i=0;i<optionTime.length;i++) {
+                    console.log('удаляю')
+                    optionTime[i].classList.remove('online-record-time-active')
+                }
+                // ищем нужную нам услугу по id и добавляем ей active
+                let activeTimeNow = document.querySelector('#' + id);
+                activeTimeNow.classList.add('online-record-time-active');
+            }
+
+        } else {
+            // если кликнули не по услугам, то удаляем класс active и возвращаем border
+            TimesWrap[0].classList.remove("online-record-times-active");
+            buttonTime.style.borderRadius = '20px';
+            console.log('всё другое');
+        }
+    }
+    
+}
+clickTime()
