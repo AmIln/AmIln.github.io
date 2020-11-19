@@ -524,6 +524,7 @@ nav.menu  {
 				text-align: center;
 				color: #000000;
 				opacity: 0.5;
+				outline: none;
 			}
 			> button {
 				width: 300px;
@@ -745,20 +746,44 @@ nav.menu  {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	> h2 {
 		margin-bottom: 80px;
+		font-size: 35px;
+		font-weight: 600;
 	}
 	> .job__wrapper {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 100px 0 100px;
 		>.job__wrapper_mini {
-			margin: 0 120px 0 0;
+			max-width: 520px;
+			max-height: 500px;
 			> img {
 				max-width: 494px;
 				max-height: 450px;
 				border-radius: 15px;
 			}
+			>.instagram-indicators {
+				display: flex;
+				flex-direction: row;
+				height: 35px;
+				>.hearth__wrapper {
+					width: 60px;
+					>.hearth-img {
+						background-image: url(../img/);
+					}
+				}
+			}
 		}
+		.job__wrapper_mini:nth-child(2) {
+			margin: 0 118px 0 118px;
+		}
+		
 	}
+	
+}
+.job__button-wrapper {
+	display: flex;
+	width: 100%;
 }
