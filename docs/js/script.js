@@ -383,9 +383,16 @@ for (let i=0;i<FAKs.length;i++) {
             document.getElementById('BleedingStrong_id').style.display = 'none';
             document.querySelector('.PriorityNumbers').children[5].style.display = 'none';
             document.querySelector('.PriorityNumbers').children[6].style.display = 'none';   
-        }else if (ActiveFAK.id === 'Avto_id'){
+        } else if (ActiveFAK.id === 'Avto_id'){
             document.getElementById('BleedingStrong_id').style.display = 'none';
-            document.querySelector('.PriorityNumbers').children[6].style.display = 'none'; 
+            document.querySelector('.PriorityNumbers').children[6].style.display = 'none';
+            let bleeding_none =  document.getElementById('Bleeding_id').getAttribute('style') === 'display: none;';
+            let number_none = document.querySelector('.PriorityNumbers').children[5].getAttribute('style') === 'display: none;';
+            // проверка на дисплей "легкого кровотячения и номера 6" 
+            if (bleeding_none && number_none) {
+                document.getElementById('Bleeding_id').style.display = 'flex';
+                document.querySelector('.PriorityNumbers').children[5].style.display = 'flex';
+            }
         } else {
             document.getElementById('Bleeding_id').style.display = 'flex';
             document.getElementById('BleedingStrong_id').style.display = 'flex';
