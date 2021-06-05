@@ -1,1 +1,55 @@
-<!DOCTYPE html><html lang="en">	<head>		<meta charset="UTF-8">		<meta name="viewport" content="width=device-width, initial-scale=1.0">		<link rel="stylesheet" href="css/style.min.css">		<title>priority of healing</title>	</head>	<body>				<main class="HumanBody">			<div class="HumanBody-Limb HumanBody-Limb_head" id="Head_id">35/35</div>			<div class="HumanBody-Limb HumanBody-Limb_cheast" id="Cheast_id">85/85</div>			<div class="HumanBody-Limb HumanBody-Limb_stomach" id="Stomach_id">70/70</div>			<div class="HumanBody-Limb HumanBody-Limb_rightHand" id="RightHand_id">60/60</div>			<div class="HumanBody-Limb HumanBody-Limb_leftHand" id="LeftHand_id">60/60</div>			<div class="HumanBody-Limb HumanBody-Limb_leftLeg" id="LeftLeg_id">65/65</div>			<div class="HumanBody-Limb HumanBody-Limb_rightLeg" id="RightLeg_id">65/65</div>		</main>		<div class="FirstAidKits" id="FirstAidKits_id">			<div class="FirstAidKits-Fak FirstAidKits-Fak_ai2" id="AI2_id"></div>			<div class="FirstAidKits-Fak FirstAidKits-Fak_avto" id="Avto_id"></div>			<div class="FirstAidKits-Fak FirstAidKits-Fak_ifak" id="IFAK_id"></div>			<div class="FirstAidKits-Fak FirstAidKits-Fak_afak" id="AFAK_id"></div>			<div class="FirstAidKits-Fak FirstAidKits-Fak_salewa FirstAidKits-Fak_activeFAK" id="Salewa_id"></div>			<div class="FirstAidKits-Fak FirstAidKits-Fak_grizzly" id="Grizzly_id"></div>		</div>		<div class="PriorityNumbers">			<div class="PriorityNumbers-Number">1</div>			<div class="PriorityNumbers-Number">2</div>			<div class="PriorityNumbers-Number">3</div>			<div class="PriorityNumbers-Number">4</div>			<div class="PriorityNumbers-Number">5</div>			<div class="PriorityNumbers-Number">6</div>			<div class="PriorityNumbers-Number">7</div>		</div>		<div class="PriorityParts" id="PriorityParts_id">			<div class="PriorityParts-Part" id="HeadPart_id">Голова</div>			<div class="PriorityParts-Part" id="CheastPart_id">Грудь</div>			<div class="PriorityParts-Part" id="StomachPart_id">Живот</div>			<div class="PriorityParts-Part" id="HandsParts_id">Руки</div>			<div class="PriorityParts-Part" id="LegsParts_id">Ноги</div>			<div class="PriorityParts-Part" id="Bleeding_id">Легкое кровотечение</div>			<div class="PriorityParts-Part" id="BleedingStrong_id">Тяжелое кровотечение</div>		</div>				<div class="Button Button-Damage" id="DamageButton_id">Нанести урон</div>		<div class="Button Button-Heal" id="HealButton_id">Перевязаться</div>		<script src="js/script.min.js"></script>	</body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.min.css">
+		<title>Приоритет лечения</title>
+    <!-- Autor facklak@mail.ru -->
+	</head>
+	<body>
+		
+		<main class="HumanBody">
+			<div class="HumanBody-Limb HumanBody-Limb_head" id="Head_id">35/35</div>
+			<div class="HumanBody-Limb HumanBody-Limb_cheast" id="Cheast_id">85/85</div>
+			<div class="HumanBody-Limb HumanBody-Limb_stomach" id="Stomach_id">70/70</div>
+			<div class="HumanBody-Limb HumanBody-Limb_rightHand" id="RightHand_id">60/60</div>
+			<div class="HumanBody-Limb HumanBody-Limb_leftHand" id="LeftHand_id">60/60</div>
+			<div class="HumanBody-Limb HumanBody-Limb_leftLeg" id="LeftLeg_id">65/65</div>
+			<div class="HumanBody-Limb HumanBody-Limb_rightLeg" id="RightLeg_id">65/65</div>
+		</main>
+
+		<div class="FirstAidKits" id="FirstAidKits_id">
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_ai2" id="AI2_id"></div>
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_avto" id="Avto_id"></div>
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_ifak" id="IFAK_id"></div>
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_afak" id="AFAK_id"></div>
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_salewa FirstAidKits-Fak_activeFAK" id="Salewa_id"></div>
+			<div class="FirstAidKits-Fak FirstAidKits-Fak_grizzly" id="Grizzly_id"></div>
+		</div>
+
+		<div class="PriorityNumbers">
+			<div class="PriorityNumbers-Number">1</div>
+			<div class="PriorityNumbers-Number">2</div>
+			<div class="PriorityNumbers-Number">3</div>
+			<div class="PriorityNumbers-Number">4</div>
+			<div class="PriorityNumbers-Number">5</div>
+			<div class="PriorityNumbers-Number">6</div>
+			<div class="PriorityNumbers-Number">7</div>
+		</div>
+
+		<div class="PriorityParts" id="PriorityParts_id">
+			<div class="PriorityParts-Part" id="HeadPart_id">Голова</div>
+			<div class="PriorityParts-Part" id="CheastPart_id">Грудь</div>
+			<div class="PriorityParts-Part" id="StomachPart_id">Живот</div>
+			<div class="PriorityParts-Part" id="HandsParts_id">Руки</div>
+			<div class="PriorityParts-Part" id="LegsParts_id">Ноги</div>
+			<div class="PriorityParts-Part" id="Bleeding_id">Легкое кровотечение</div>
+			<div class="PriorityParts-Part" id="BleedingStrong_id">Тяжелое кровотечение</div>
+		</div>
+		
+		<div class="Button Button-Damage" id="DamageButton_id">Нанести урон</div>
+		<div class="Button Button-Heal" id="HealButton_id">Перевязаться</div>
+		<script src="js/script.min.js"></script>
+	</body>
+</html>
